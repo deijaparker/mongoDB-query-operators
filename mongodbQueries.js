@@ -26,3 +26,17 @@ db.sample_supplies.find({
 db.restaurants.find({
   $nor: [{ cuisine: "Italian" }, { borough: "Queens" }],
 });
+
+// --------> newDB()
+
+// 3. Queries using $eq and $ne
+
+// Find all restaurants with a grade of 'A'
+db.grades.find({
+  grade: { $eq: "A" },
+});
+
+// Find inspections that were not conducted in 2023
+db.inspections.find({
+  inspection_date: { $ne: "2023" },
+});
