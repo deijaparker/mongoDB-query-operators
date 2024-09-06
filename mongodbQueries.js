@@ -40,3 +40,17 @@ db.grades.find({
 db.inspections.find({
   inspection_date: { $ne: "2023" },
 });
+
+// --------> newDB()
+
+// 4. Queries using $gt and $lt
+
+// Find all routes with more than 10 stops
+db.routes.find({
+  stops: { $gt: 10 },
+});
+
+// Find trips that lasted less than 30 minutes
+db.trips.find({
+  duration: { $lt: 30 },
+});
