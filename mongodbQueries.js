@@ -54,3 +54,17 @@ db.routes.find({
 db.trips.find({
   duration: { $lt: 30 },
 });
+
+// --------> newDB()
+
+// 5. Queries using $in and $nin
+
+// Find companies that belong to either the Technology or Finance sector
+db.companies.find({
+  sector: { $in: ["Technology", "Finance"] },
+});
+
+// Find posts that were not created in either '2023' or '2024'
+db.posts.find({
+  created_year: { $nin: ["2023", "2024"] },
+});
